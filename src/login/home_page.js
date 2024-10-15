@@ -6,7 +6,6 @@ import {
   capitalize,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
   Drawer,
@@ -449,6 +448,6 @@ function HomePage() {
       </Box>
     </Box>
   );
-}
+};
 
 export default HomePage;
