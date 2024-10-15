@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const BackendBaseUrl = "http://127.0.0.1:5000";
+export const BackendBaseUrl = "https://b24bbb80-039b-49b4-994f-bf9f221f37d4-00-1ydgrms3iookv.sisko.replit.dev";
 
 export const AuthContext = createContext();
 
