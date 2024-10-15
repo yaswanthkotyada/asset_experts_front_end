@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BackendBaseUrl } from "../global_varibels";
 import { AuthContext } from "../global_varibels";
 const { TextField, Box, FormGroup, Typography, Button } = require("@mui/material")
 
 function LoginPage() {
-    const {user_data,login,UpdateUser}=useContext(AuthContext)
+    const {login,UpdateUser}=useContext(AuthContext)
     const navigate=useNavigate()
     const ReRouteToSignPage=()=>(
         navigate('/signin')
@@ -41,7 +41,7 @@ function LoginPage() {
             const responseData = await response.json();
             console.log("response:",JSON.stringify(responseData))
             console.log("response data:",responseData)
-            if (responseData.status=="success"){
+            if (responseData.status==="success"){
                 const user_details= responseData.user_details;
                 console.log("user details:", user_details)
                 UpdateUser(user_details)

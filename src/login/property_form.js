@@ -15,7 +15,7 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { HeaderComponent } from "./home_page";
 import { useContext, useState } from "react";
-import { json, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 export function SellPropertyForm({ form_fields, update }) {
   const { user_data } = useContext(AuthContext);
@@ -130,7 +130,7 @@ export function SellPropertyForm({ form_fields, update }) {
       console.log("form data", parsedData);
       const backend_route_to_add_property = `${BackendBaseUrl}/property`;
       let response;
-      if (update == true) {
+      if (update === true) {
         console.log("updating the property");
         response = await fetch(backend_route_to_add_property, {
           method: "PUT",
@@ -151,7 +151,7 @@ export function SellPropertyForm({ form_fields, update }) {
 
       const response_data = await response.json();
       console.log("response data", response_data);
-      if (response_data.status == "success") {
+      if (response_data.status === "success") {
         console.log("property added/Updated successfuly");
         setMessageType("success")
         setMessage(response_data.message)

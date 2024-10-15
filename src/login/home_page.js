@@ -77,17 +77,17 @@ export function GenerateCards(sell_props) {
   const getPropertyTitile = (listing_type, property_type, unit, size) => {
     const captalized_prop_type = capitalize(property_type);
     console.log("property type", captalized_prop_type);
-    if (listing_type == "sell") {
+    if (listing_type === "sell") {
       return `${size} ${unit}, ${captalized_prop_type} For Sale`;
-    } else if (listing_type == "renatl") {
+    } else if (listing_type === "renatl") {
       return `${size} ${unit}, ${captalized_prop_type} For Rent`;
-    } else if (listing_type == "wanted") {
+    } else if (listing_type === "wanted") {
       return `Wanted ${captalized_prop_type}, ${size} ${unit}`;
     }
   };
 
   const getPrice = (price, unit, prop_type) => {
-    if (prop_type == "commercial" || prop_type == "house") {
+    if (prop_type === "commercial" || prop_type === "house") {
       return (
         <Box
           sx={{

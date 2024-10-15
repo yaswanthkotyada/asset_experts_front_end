@@ -2,7 +2,7 @@
 import LoginPage from "./login/login_page";
 import HomePage from "./login/home_page";
 import SignInPage from "./login/sign_in";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider  } from "./global_varibels";
 import ManageUserProfile from "./login/profile_page";
 import PropertyForm from "./login/property_form";

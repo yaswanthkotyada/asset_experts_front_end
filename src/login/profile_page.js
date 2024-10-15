@@ -4,16 +4,12 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   FormGroup,
   Paper,
-  Stack,
   TextField,
   Typography,
-  useMediaQuery,
 } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 // import theme from './theme';
 import { HeaderComponent } from "./home_page";
 import React, { useContext, useState } from "react";
@@ -47,7 +43,7 @@ function ManageUserProfile() {
       });
       const responseData = await response.json();
       console.log(`response:${JSON.stringify(responseData)}`);
-      if (responseData.status == "success") {
+      if (responseData.status === "success") {
         const user_details = responseData.user_details;
         console.log("user details:", user_details);
         UpdateUser(user_details);
@@ -61,7 +57,6 @@ function ManageUserProfile() {
       handleClose()
     }
   };
-  const theme = useTheme();
   const handleChangeValues = (e) => {
     const { id, value } = e.target;
     console.log(id, value);
