@@ -105,7 +105,7 @@ function ProcessPorpertyDetails(property_details) {
       </Box>
       <Box
         sx={{
-          margin: 2,
+          // marginLeft: 2,
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
@@ -130,14 +130,15 @@ function ProcessPorpertyDetails(property_details) {
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "2fr 1fr",
+              gridTemplateColumns: {sm:"2fr 1fr",xs:"1fr 1fr"},
               rowGap: 2,
-              padding: 2,
+              columnGap:{xs:1},
+              padding: {sm:2,xs:0},
               justifyItems: "revert",
             }}
           >
             {Object.entries(deatils_to_show).map(([key, value]) => (
-              <Box sx={{ display: "flex", flexDirection: "row" }} key={key}>
+              <Box sx={{ display: "flex", flexDirection: "row", flexWrap:"wrap" }} key={key}>
                 <Box>
                   <Typography sx={{ fontWeight: "bold" }}>{key}:</Typography>
                 </Box>
@@ -167,52 +168,6 @@ function ProcessPorpertyDetails(property_details) {
   );
 }
 
-// export function ShowPropertyDetails() {
-//   const { propertyId } = useParams();
-//   console.log("propertyId", propertyId);
-//   const property_data = async (e) => {
-//     try{
-//     const backend_url = `${BackendBaseUrl}/get-property?prop_id=${propertyId}`;
-//     const response = await fetch(backend_url, {
-//       method: "Get",
-//       headers: {
-//         "Content-Type": "application/json",
-//       }
-//     });
-//     const response_data=await response.json()
-//     console.log("response data",response_data)
-//     if (response_data.status=="success") {
-//         console.log("processing for showing details")
-//         return response_data.prop_details
-//     }
-//     else {
-//         console.log("error in fetching data")
-//     }
-// }
-// catch (error){
-//     console.log("error", error)
-// }
-//   };
-//   const response_data=property_data()
-//   console.log("prop details",response_data)
-//   return (
-//     <Box
-//       sx={{
-//         display: "flex",
-//         flexDirection: "column",
-//         justifyContent: "center",
-//         rowGap: 5,
-//       }}
-//     >
-//       <Box>
-//         <HeaderComponent />
-//       </Box>
-//       <Box>
-//         {response_data?<ProcessPorpertyDetails />:""}
-//       </Box>
-//     </Box>
-//   );
-// }
 
 export function ShowPropertyDetails() {
   const { propertyId } = useParams(); // Get the property ID from the URL
